@@ -35,6 +35,7 @@ void searchBonus(Seller& seller) {
   }
 }
 
+
 void searchTotalSum(Seller& seller) {
   seller.totalSum = seller.sum + (seller.sum / 100 * seller.bonus);
 }
