@@ -2,14 +2,14 @@
 #include <iomanip>
 
 struct Student {
-  std::string name;
-  std::string group;
-  std::string mail;
-  std::string phoneNumber;
-  std::string dateOfBirth;
+  std::string name;         // Ім'я
+  std::string group;        // Група
+  std::string mail;         // Електронна пошта
+  std::string phoneNumber;  // Номер телефону
+  std::string dateOfBirth;  // Дата народження
   
-  double averageMark;
-  int missedDays;
+  double averageMark;  // Середній бал
+  int missedDays;      // Кількість пропущених днів
 };
 
 void getStudentData(Student& student) {
@@ -48,6 +48,7 @@ int main() {
   Student array[size];
 
   for (int i = 0; i < size; ++i) {
+    // Отримання даних студента 
     getStudentData(array[i]);
   }
   
@@ -59,6 +60,7 @@ int main() {
             << std::setw(13) << "MISSED-DAYS" << '\n';
 
   for (int i = 0; i < size; ++i) {
+    // Виведення даних студента
     printStudentData(array[i]);
   }
   std::cout << '\n';
