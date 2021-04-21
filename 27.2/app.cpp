@@ -1,5 +1,7 @@
 #include <iostream>
 
+// Hello Nichiporuk
+
 // Маніпулятор для включення жирного тексу Linux/MacOS
 std::ostream& boldOn(std::ostream& os) {
   return os << "\e[1m";
