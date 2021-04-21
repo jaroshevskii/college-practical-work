@@ -2,18 +2,18 @@
 
 // Маніпулятор для включення жирного тексу Linux/MacOS
 std::ostream& boldOn(std::ostream& os) {
-    return os << "\e[1m";
+  return os << "\e[1m";
 }
 
 // Маніпулятор для відключення жирного тексу Linux/MacOS
 std::ostream& boldOff(std::ostream& os) {
-    return os << "\e[0m";
+  return os << "\e[0m";
 }
 
 struct Student {
   std::string firstName;   // Ім'я
   std::string secondName;  // Призвіще
-  std::string thirdName;    // По батькові
+  std::string thirdName;   // По батькові
 
   int firstSubgect;   // Кількість балів за перший предмет
   int secondSubgect;  // Кількість балів за другий предмет
