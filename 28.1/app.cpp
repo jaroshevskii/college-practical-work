@@ -6,7 +6,7 @@ void fileWrite(const char* file) {
   
   // Якщо не можливо відкрити файл для запису
   if (!fout) {
-    std::cout << "ERROR: Could not be opened for writing " << file << '\n';
+    std::cout << "ERROR: Could not be opened for writing '" << file << "'\n";
     return;
   }
   
@@ -20,6 +20,7 @@ void fileWrite(const char* file) {
     
     // Якщо введена команда 'end' закінчення запису
     if (str == "end") {
+      std::cout << '\n';
       return;
     }
     
@@ -33,7 +34,7 @@ void fileRead(const char* file) {
   
   // Якщо не можливо відкрити файл для читання
   if (!fin) {
-    std::cout << "ERROR: Could not be opened for reading " << file << '\n';
+    std::cout << "ERROR: Could not be opened for reading '" << file << "'\n";
     return;
   }
   
@@ -47,12 +48,10 @@ void fileRead(const char* file) {
 }
 
 int main() {
-  const char file[] = "28.1/temp.txt";
-  
   // Запис в файл
-  fileWrite(file);
+  fileWrite("28.1/temp.txt");
   
   // Читання з файлу
-  fileRead(file);
+  fileRead("28.1/temp.txt");
   return 0;
 }

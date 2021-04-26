@@ -1,16 +1,13 @@
 #include <iostream>
 #include <fstream>
 
-int main() {
-  const char file[] = "28.2/greetings.txt";
-
+void printGreeting(const char* file) {
   std::ofstream fout(file);
 
   // Якщо не можливо відкрити файл для запису
   if (!fout) {
-    std::cout << "ERROR: Could not be opened for writing " << file << '\n';
-    std::cout << '\n';
-    return 0;
+    std::cout << "ERROR: Could not be opened for writing '" << file << "'\n";
+    return;
   }
 
   // Робота вчителя ой як нелегка.
@@ -27,5 +24,9 @@ int main() {
           "We sincerely welcome you for your efforts.\n"
           "And today we congratulate you on your birthday.\n"
           "We wish you health, love and happiness.\n";
+}
+
+int main() {
+  printGreeting("28.2/greeting.txt");
   return 0;
 }   
