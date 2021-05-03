@@ -13,7 +13,7 @@ void fileWrite(const char* file) {
   std::cout << "> value = ";
   int value;
   std::cin >> value;
-  std::cout << "\n";
+  std::cout << '\n';
   
   std::string surname;         // Призвіще
   std::string name;            // Ім'я
@@ -26,10 +26,10 @@ void fileWrite(const char* file) {
     std::cin >> name;
     std::cout << "> Name from father: ";
     std::cin >> nameFromFather;
-    std::cout << "\n";
+    std::cout << '\n';
 
     // Запис ПІБ у файл
-    fout << surname << " " << name  << " " << nameFromFather << "\n";
+    fout << surname << ' ' << name  << ' ' << nameFromFather << '\n';
   }
 }
 
@@ -45,7 +45,7 @@ void fileSearchSurname(const char* file) {
   std::cout << "> Search Surname: ";
   std::string searchSurname;
   std::cin >> searchSurname;
-  std::cout << "\n";
+  std::cout << '\n';
   
   bool isSearchSurname;  // Знайдено призвіще
   std::string surname;   // Призвіще
@@ -57,13 +57,13 @@ void fileSearchSurname(const char* file) {
       isSearchSurname = true;
       std::string str;
       getline(fin, str);
-      std::cout << str << "\n";
+      std::cout << str << '\n';
     }
   }
 
   if (!isSearchSurname) {
     std::cout << "ERROR: No one was with surnmame '" << searchSurname << "'\n";
-    std::cout << "\n";
+    std::cout << '\n';
   }
 }
 
