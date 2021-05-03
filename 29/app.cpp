@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 
+// Запис ПІБ у файл
 void fileWrite(const char* file) {
   std::ofstream fout(file, std::ios::app);
   
@@ -33,6 +34,7 @@ void fileWrite(const char* file) {
   }
 }
 
+// Знаходження призвіща в файлі
 void fileSearchSurname(const char* file) {
   std::ifstream fin(file);
   
@@ -68,10 +70,8 @@ void fileSearchSurname(const char* file) {
 }
 
 int main() {
-  // Запис ПІБ у файл
   fileWrite("29/data.txt");
 
-  // Знаходження призвіща в файлі
   fileSearchSurname("29/data.txt");
   return 0;
 }
