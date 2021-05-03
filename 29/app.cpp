@@ -69,9 +69,9 @@ void fileSearchSurname(const char* file) {
 
 int main() {
   // Запис ПІБ у файл
-  fileWrite("29.1/data.txt");
+  fileWrite("29/data.txt");
 
   // Знаходження призвіща в файлі
-  fileSearchSurname("29.1/data.txt");
+  fileSearchSurname("29/data.txt");
   return 0;
 }
