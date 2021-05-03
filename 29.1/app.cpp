@@ -1,7 +1,39 @@
 #include <iostream>
 #include <fstream>
 
-void fileSearchName(const char* file) {
+void fileWrite(const char* file) {
+  std::ofstream fout(file, std::ios::app);
+  
+  // Якщо не можливо відкрити файл для запису
+  if (!fout) {
+    std::cout << "ERROR: Could not be opened for writing '" << file << "'\n";
+    return;
+  }
+
+  std::cout << "> value = ";
+  int value;
+  std::cin >> value;
+  std::cout << "\n";
+  
+  std::string surname;         // Призвіще
+  std::string name;            // Ім'я
+  std::string nameFromFather;  // По батькові
+
+  for (int i = 0; i < value; ++i) {
+    std::cout << "> Surname: ";
+    std::cin >> surname;
+    std::cout << "> Name: ";
+    std::cin >> name;
+    std::cout << "> Name from father: ";
+    std::cin >> nameFromFather;
+    std::cout << "\n";
+
+    // Запис ПІБ у файл
+    fout << surname << " " << name  << " " << nameFromFather << "\n";
+  }
+}
+
+void fileSearchSurname(const char* file) {
   std::ifstream fin(file);
   
   // Якщо не можливо відкрити файл для читання
@@ -10,31 +42,36 @@ void fileSearchName(const char* file) {
     return;
   }
   
-  std::cout << "> searchName = ";
-  std::string searchName;
-  std::cin >> searchName;
-  std::cout << '\n';
+  std::cout << "> Search Surname: ";
+  std::string searchSurname;
+  std::cin >> searchSurname;
+  std::cout << "\n";
   
-  const int size = 3;
-  std::string name[size];
+  bool isSearchSurname;  // Знайдено призвіще
+  std::string surname;   // Призвіще
+
   while (fin) {
-    fin >> name[0] >> name[1] >> name[2];
+    fin >> surname;
     
-    if (searchName == name[0]) {
-      for (int i = 0; i < size; ++i) {
-        std::cout << name[i];
-      }
-      std::cout << '\n';
+    if (searchSurname == surname) {
+      isSearchSurname = true;
+      std::string str;
+      getline(fin, str);
+      std::cout << str << "\n";
     }
+  }
+
+  if (!isSearchSurname) {
+    std::cout << "ERROR: No one was with surnmame '" << searchSurname << "'\n";
+    std::cout << "\n";
   }
 }
 
 int main() {
-  // Знаходження імені в файлі
-  fileSearchName("29.1/data.txt");
+  // Запис ПІБ у файл
+  fileWrite("29.1/data.txt");
 
-  // Hell from Windows
-
-
+  // Знаходження призвіща в файлі
+  fileSearchSurname("29.1/data.txt");
   return 0;
 }
