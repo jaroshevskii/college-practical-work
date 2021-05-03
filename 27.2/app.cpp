@@ -1,11 +1,11 @@
 #include <iostream>
 
-// Маніпулятор для включення жирного тексу Linux/MacOS
+// Маніпулятор для включення жирного тексу
 std::ostream& boldOn(std::ostream& os) {
   return os << "\e[1m";
 }
 
-// Маніпулятор для відключення жирного тексу Linux/MacOS
+// Маніпулятор для відключення жирного тексу
 std::ostream& boldOff(std::ostream& os) {
   return os << "\e[0m";
 }
