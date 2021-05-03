@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 
+// Запис значень в файл
 void fileWriteValue(const char* file) {
   std::ofstream fout(file);
   
@@ -24,11 +25,11 @@ void fileWriteValue(const char* file) {
       return;
     }
     
-    // Запис значення в файл
     fout << value << '\n';
   }
 }
 
+// Знаходження максимального значення в файлі
 int fileSearchMaxValue(const char* file) {
   std::ifstream fin(file);
   
@@ -50,6 +51,7 @@ int fileSearchMaxValue(const char* file) {
   return maxValue;
 }
 
+// Запис максимального начення в файл
 void fileWriteMaxValue(const char* readFile, const char* writeFile) {
   int maxValue = fileSearchMaxValue(readFile);
 
@@ -72,10 +74,8 @@ void fileWriteMaxValue(const char* readFile, const char* writeFile) {
 }
 
 int main() {
-  // Запис значень в файл
   fileWriteValue("28.3/temp.txt");
 
-  // Запис максимального начення в файл
   fileWriteMaxValue("28.3/temp.txt", "28.3/max_value.txt");
   return 0;
 }

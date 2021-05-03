@@ -42,7 +42,6 @@ void fileRead(const char* file) {
     std::string str;
     std::getline(fin, str);
     
-    // Вивід рядка
     std::cout << str << '\n';
   }
 }

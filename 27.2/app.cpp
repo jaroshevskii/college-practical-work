@@ -48,7 +48,7 @@ bool searchResult(const int firstValue, const int secondValue) {
 }
 
 void printStudentData (Student& student, const int index) {
-  // Знаходимо результат вступу
+  // Знаходження результату вступу
   bool result = searchResult(student.firstSubgect, student.secondSubgect);
 
   std::cout << "// Information about " << boldOn << index << boldOff << " student\n"
