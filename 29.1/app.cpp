@@ -33,7 +33,7 @@ int main() {
   // Знаходження імені в файлі
   fileSearchName("29.1/data.txt");
 
-  //
+  // Hell from Windows
 
 
   return 0;
