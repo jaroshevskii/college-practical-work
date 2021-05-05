@@ -7,6 +7,7 @@ struct Employee {
   
   int spentDays;          // Кількість відпрацьованих днів
   int hoursWorkedOut;     // Кількісь відпрацьованих годин
+  
   double profitReceived;  // Отриманий прибуток 
   double sumSalary;       // Заробітня плата за позадовим окладом
   double sumWorkedHours;  // Заробітня плата за відпрацьовані години
