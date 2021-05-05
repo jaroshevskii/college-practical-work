@@ -5,8 +5,8 @@ struct Employee {
   std::string name;            // Ім'я
   std::string nameFromFather;  // По батькові
   
-  int spentDays;          // Кількість відпрацьованих днів
-  int hoursWorkedOut;     // Кількісь відпрацьованих годин
+  int spentDays;       // Кількість відпрацьованих днів
+  int hoursWorkedOut;  // Кількісь відпрацьованих годин
   
   double profitReceived;  // Отриманий прибуток 
   double sumSalary;       // Заробітня плата за позадовим окладом
@@ -81,14 +81,14 @@ double searchSumWorkedHours(const int hoursWorkedOut) {
 }
 
 double searchSumPesent(const int profitReceived) {
-  const double pecent = 25.0;  // Відсоткок
+  const double percent = 25.0;  // Відсоткок
 
   // Заробітня плата за відсотком
-  double sumPecent = profitReceived * pecent / 100.0;
+  double sumpercent = profitReceived * percent / 100.0;
 
   // Знаходження заробітньої плати з урахуванням податків
-  sumPecent -= sumPecent * 19.5 / 100.0;
-  return sumPecent;
+  sumpercent -= sumpercent * 19.5 / 100.0;
+  return sumpercent;
 }
 
 void printEmployeeData(const Employee& employee, const int index) {
@@ -98,7 +98,7 @@ void printEmployeeData(const Employee& employee, const int index) {
                "Name from father: " << employee.nameFromFather << "\n"
                "Sum sallary: " << employee.sumSalary << "\n"
                "Sum worked hours: " << employee.sumWorkedHours << "\n"
-               "Sum pecent: " << employee.sumPesent << '\n';
+               "Sum percent: " << employee.sumPesent << '\n';
   std::cout << '\n';
 }
 
