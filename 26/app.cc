@@ -46,10 +46,10 @@ void printSellerData(Seller& seller) {
 }
 
 int main() {
-  const int size = 3;
-  Seller array[size];
+  const int length = 3;
+  Seller array[length];
   
-  for (int i = 0; i < size; ++i) {
+  for (int i = 0; i < length; ++i) {
     getSellerData(array[i]);
 
     searchBonus(array[i]);
@@ -62,7 +62,7 @@ int main() {
             << std::setw(10) << "BONUS" << std::setw(10) << "SUM"
             << std::setw(10) << "TOTAL-SUM" << '\n';
 
-  for (int i = 0; i < size; ++i) {
+  for (int i = 0; i < length; ++i) {
     printSellerData(array[i]);
   }
   std::cout << '\n';

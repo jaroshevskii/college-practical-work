@@ -103,10 +103,10 @@ void printEmployeeData(const Employee& employee, const int index) {
 }
 
 int main() {
-  const int size = 10;
-  Employee array[size];
+  const int length = 10;
+  Employee array[length];
 
-  for (int i = 0; i < size; ++i) {
+  for (int i = 0; i < length; ++i) {
     // Отримання даних працівника
     getEmployeeData(array[i]);
 
@@ -120,7 +120,7 @@ int main() {
     array[i].sumPesent = searchSumPesent(array[i].profitReceived);
   }
   
-  for (int i = 0; i < size; ++i) {
+  for (int i = 0; i < length; ++i) {
     // Виведення даних працівника
     printEmployeeData(array[i], i + 1);
   }

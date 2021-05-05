@@ -62,15 +62,15 @@ void printStudentData (Student& student, const int index) {
 }
 
 int main() {
-  const int size = 5;
-  Student array[size];
+  const int length = 5;
+  Student array[length];
 
-  for (int i = 0; i < size; ++i) {
+  for (int i = 0; i < length; ++i) {
     // Отримання даних студента
     getStudentData(array[i]);
   }
   
-  for (int i = 0; i < size; ++i) {
+  for (int i = 0; i < length; ++i) {
     // Виведення даних студента
     printStudentData(array[i], i + 1);
   }

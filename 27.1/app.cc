@@ -44,10 +44,10 @@ void printStudentData(Student& student) {
 }
 
 int main() {
-  const int size = 10;
-  Student array[size];
+  const int length = 10;
+  Student array[length];
 
-  for (int i = 0; i < size; ++i) {
+  for (int i = 0; i < length; ++i) {
     // Отримання даних студента 
     getStudentData(array[i]);
   }
@@ -59,7 +59,7 @@ int main() {
             << std::setw(15) << "DATE-OF-BIRTH" << std::setw(14) << "AVERAGE-MARK"
             << std::setw(13) << "MISSED-DAYS" << '\n';
 
-  for (int i = 0; i < size; ++i) {
+  for (int i = 0; i < length; ++i) {
     // Виведення даних студента
     printStudentData(array[i]);
   }
