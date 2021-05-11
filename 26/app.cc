@@ -58,9 +58,9 @@ int main() {
   
   std::cout << std::setiosflags(std::ios::left);
 
-  std::cout << std::setw(15) << "NAME" << std::setw(15) << "YEARS-WORKED"
+  std::cout << std::setw(15) << "NAME" << std::setw(15) << "YEARS_WORKED"
             << std::setw(10) << "BONUS" << std::setw(10) << "SUM"
-            << std::setw(10) << "TOTAL-SUM" << '\n';
+            << std::setw(10) << "TOTAL_SUM" << '\n';
 
   for (int i = 0; i < length; ++i) {
     printSellerData(array[i]);
