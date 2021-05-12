@@ -14,6 +14,7 @@ struct Employee {
   double sumPesent;       // Заробітня плата за відсотком
 };
 
+// Отримання значення
 int getValue(const int minValue, const int maxValue) {
   int value;
 
@@ -29,6 +30,7 @@ int getValue(const int minValue, const int maxValue) {
   }
 }
 
+// Отримання даних працівника
 void getEmployeeData(Employee& employee) {
   std::cout << "> employee.surname = ";
   std::cin >> employee.surname;
@@ -50,6 +52,7 @@ void getEmployeeData(Employee& employee) {
   std::cout << '\n';
 }
 
+// Знаходження заробітньої плати за посадковим окладом
 double searchSumSalary(const int spentDays) {
   const int workDays = 21;      // Кількість робочих днів
   const double salary = 100.0;  // Посадовий оклад
@@ -69,6 +72,7 @@ double searchSumSalary(const int spentDays) {
   return sumSalary;
 }
 
+// Знаходження заробітньої плати за відроблені години
 double searchSumWorkedHours(const int hoursWorkedOut) {
   const double payPerHour = 2.5;  // Оплата за годину
 
@@ -80,6 +84,7 @@ double searchSumWorkedHours(const int hoursWorkedOut) {
   return sumWorkedHours;
 }
 
+// Знаходження заробітньої плати за відсотком
 double searchSumPesent(const int profitReceived) {
   const double percent = 25.0;  // Відсоткок
 
@@ -91,6 +96,7 @@ double searchSumPesent(const int profitReceived) {
   return sumpercent;
 }
 
+// Виведення даних працівника
 void printEmployeeData(const Employee& employee, const int index) {
   std::cout << "// Information about " << index << " employe\n"
                "Surname: " << employee.surname << "\n"
