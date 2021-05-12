@@ -2,7 +2,7 @@
 .vscode/
 
 # Temp
-tmp/
+temp/
 
 # Executables
 *.exe
