@@ -12,9 +12,7 @@ struct Man {
 int getValue(const int minValue, const int maxValue) {
   int value;
 
-  while (true) {
-    std::cin >> value;
-
+  while (std::cin >> value) {
     if (value >= minValue && value <= maxValue) {
       return value;
     } else {
@@ -22,6 +20,7 @@ int getValue(const int minValue, const int maxValue) {
                    "> ";
     }
   }
+  return 0;
 }
 
 // Отримання даних чоловіка
