@@ -3,6 +3,7 @@
 
 # Temp
 temp/
+test/
 
 # Executables
 *.exe
