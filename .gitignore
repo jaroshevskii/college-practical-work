@@ -1,9 +1,18 @@
-# Visual Studio Code
-.vscode/
+# Test folder
+test/*
 
-# Temp
-temp/
-test/
+# Files built by Visual Studio
+*.ilk
+*.obj
+*.pch
+*.pdb
+
+# VS Code files for those working on multiple tools
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
 # Executables
 *.exe
