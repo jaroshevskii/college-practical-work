@@ -4,7 +4,6 @@ test/*
 # Files built by Visual Studio
 *.ilk
 *.obj
-*.pch
 *.pdb
 
 # VS Code files for those working on multiple tools
