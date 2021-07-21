@@ -8,12 +8,6 @@ struct Country {
   uint32_t nPeople;  // Кількість людей
 };
 
-std::string getString() {
-  std::string str;
-  std::cin >> str;
-  return str;
-}
-
 void printCountry(const Country& country) {
   std::cout << "Name: " << country.name << '\n'
             << "Capital: " << country.capital << '\n'
@@ -23,7 +17,8 @@ void printCountry(const Country& country) {
 
 void searchCountry(const char* fileName) {
   std::cout << "> Country name = ";
-  std::string countryName = getString();
+  std::string searchName;
+  std::cin >> searchName;
   std::cout << '\n';
 
   std::ifstream fin(fileName);
@@ -39,7 +34,7 @@ void searchCountry(const char* fileName) {
   
   Country country{};
   while (fin >> country.name >> country.capital >> country.nPeople) {
-    if (country.name == countryName) {
+    if (country.name == searchName) {
       printCountry(country);
       isSearch = true;
     }

@@ -13,12 +13,6 @@ uint16_t getValue() {
   return value;
 }
 
-std::string getString() {
-  std::string str;
-  std::cin >> str;
-  return str;
-}
-
 void printPeople(const People& people) {
   std::cout << "Name1: " << people.name1 << '\n'
             << "Name2: " << people.name2 << '\n'
@@ -28,7 +22,8 @@ void printPeople(const People& people) {
 
 void searchPeople(const char* fileName) {
   std::cout << "> Name1 = ";
-  std::string peopleName1 = getString();
+  std::string searchName1;
+  std::cin >> searchName1;
   std::cout << '\n';
 
   std::ifstream fin(fileName);
@@ -44,7 +39,7 @@ void searchPeople(const char* fileName) {
 
   People people{};
   while (fin >> people.name1 >> people.name2 >> people.name3) {
-    if (people.name1 == peopleName1) {
+    if (people.name1 == searchName1) {
       printPeople(people);
       isSearch = true;
     }
@@ -79,11 +74,9 @@ bool checkPeople(const char* fileName, const People& people) {
 void getPeople(People& people) {
   std::cout << "> Name1 = ";
   std::cin >> people.name1;
-  std::cout << '\n';
 
   std::cout << "> Name2 = ";
   std::cin >> people.name2;
-  std::cout << '\n';
 
   std::cout << "> Name3 = ";
   std::cin >> people.name3;

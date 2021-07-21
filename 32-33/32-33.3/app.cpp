@@ -17,15 +17,12 @@ uint16_t getValue() {
 void getPeople(People& people) {
   std::cout << "> Name1 = ";
   std::cin >> people.name1;
-  std::cout << '\n';
 
   std::cout << "> Name2 = ";
   std::cin >> people.name2;
-  std::cout << '\n';
 
   std::cout << "> Name3 = ";
   std::cin >> people.name3;
-  std::cout << '\n';
 
   std::cout << "> Age = ";
   people.age = getValue();
