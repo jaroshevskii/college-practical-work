@@ -33,7 +33,7 @@ void searchPeople(const char* fileName) {
 
   std::ifstream fin(fileName);
 
-  // Неможливо відкрити файл для читання
+  // Не можливо відкрити файл для читання
   if (!fin) {
     std::cout << "ERROR: Could not be opened for reading '" << fileName << "'.\n";
     std::cout << '\n';
@@ -59,7 +59,7 @@ void searchPeople(const char* fileName) {
 bool checkPeople(const char* fileName, const People& people) {
   std::ifstream fin(fileName);
 
-  // Неможливо відкрити файл для читання
+  // Не можливо відкрити файл для читання
   if (!fin) {
     std::cout << "ERROR: Could not be opened for reading '" << fileName << "'.\n";
     std::cout << '\n';
@@ -104,7 +104,7 @@ void addPeople(const char* fileName) {
 
   std::ofstream fout(fileName, std::ios::app);
 
-  // Неможливо відкрити файл для запису
+  // Не можливо відкрити файл для запису
   if (!fout) {
     std::cout << "ERROR: Could not be opened for whriting '" << fileName << "'.\n";
     std::cout << '\n';

@@ -5,7 +5,7 @@
 void writeFile(const char* fileName) {
   std::ofstream fout(fileName);
   
-  // Неможливо відкрити файл для запису
+  // Не можливо відкрити файл для запису
   if (!fout) {
     std::cout << "ERROR: Could not be opened for writing '" << fileName << "'.\n";
     std::cout << '\n';
@@ -25,7 +25,7 @@ void writeFile(const char* fileName) {
 void readFile(const char* fileName) {
   std::ifstream fin(fileName);
 
-  // Неможливо відкрити файл для читання
+  // Не можливо відкрити файл для читання
   if (!fin) {
     std::cout << "ERROR: Could not be opened for reading '" << fileName << "'.\n";
     std::cout << '\n';
