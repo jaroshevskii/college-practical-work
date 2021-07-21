@@ -21,36 +21,38 @@ void printCountry(const Country& country) {
   std::cout << '\n';
 }
 
-void searchCountry(const char* fileName, const std::string& countryName) {
-  Country country{};
+void searchCountry(const char* fileName) {
+  std::cout << "> Country name = ";
+  std::string countryName = getString();
+  std::cout << '\n';
 
   std::ifstream fin(fileName);
 
   // Неможливо відкрити файл для читання
   if (!fin) {
-    std::cout << "ERROR: Could not be opened for reading '" << fileName << "'\n";
+    std::cout << "ERROR: Could not be opened for reading '" << fileName << "'.\n";
     std::cout << '\n';
     return;
   }
   
+  bool isSearch = false;
+  
+  Country country{};
   while (fin >> country.name >> country.capital >> country.nPeople) {
     if (country.name == countryName) {
       printCountry(country);
-      return;
+      isSearch = true;
     }
   }
-
-  std::cout << "ERROR: Country is not in the database\n";
-  std::cout << '\n';
+  
+  if (!isSearch) {
+    std::cout << "ERROR: Country is not in the database.\n";
+    std::cout << '\n';
+  }
 }
 
 int main() {
-  std::cout << "What country name?\n"
-               "> ";
-  std::string countryName = getString();
-  std::cout << '\n';
-
   // Пошук країни
-  searchCountry("xcountry_list.txt", countryName);
+  searchCountry("country_list.txt");
   return 0;
 }
