@@ -1,8 +1,10 @@
 #include <iostream>
 
 struct People {
-  std::string name;  // Ім'я
-  
+  std::string name1;  // Призвіще
+  std::string name2;  // Ім'я
+  std::string name3;  // По ботькові
+
   uint16_t age;  // Вік
 };
 
@@ -13,35 +15,42 @@ uint16_t getValue() {
 }
 
 void getPeople(People& people) {
-  std::cout << "What your name?\n"
-               "> ";
-  std::cin >> people.name;
+  std::cout << "> Name1 = ";
+  std::cin >> people.name1;
   std::cout << '\n';
 
-  std::cout << "What your age?\n"
-               "> ";
+  std::cout << "> Name2 = ";
+  std::cin >> people.name2;
+  std::cout << '\n';
+
+  std::cout << "> Name3 = ";
+  std::cin >> people.name3;
+  std::cout << '\n';
+
+  std::cout << "> Age = ";
   people.age = getValue();
   std::cout << '\n';
 }
 
 void printNotification(const uint16_t& age) {
   std::cout << "Notification: ";
-
   if (age < 18 || age > 59) {
     // Не призивний вік
-    std::cout << "Not conscription age\n";
+    std::cout << "Not conscription age.\n";
   } else if (age >= 18 || age <= 27) {
     // Підлягає призову на строкову службу або може служити за контрактом
-    std::cout << "Is subject to conscription or may serve under contract\n";
+    std::cout << "Is subject to conscription or may serve under contract.\n";
   } else if (age >= 28 || age <= 59) {
     // Може служити за контрактом
-    std::cout << "May serve under contract\n";
+    std::cout << "May serve under contract.\n";
   }
   std::cout << '\n';
 }
 
 void printPeople(const People& people) {
-  std::cout << "Name: " << people.name << '\n'
+  std::cout << "Name1: " << people.name1 << '\n'
+            << "Name2: " << people.name2 << '\n'
+            << "Name3: " << people.name3 << '\n'
             << "Age: " << people.age << '\n';
   std::cout << '\n';
 }
