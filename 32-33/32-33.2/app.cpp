@@ -26,7 +26,7 @@ void searchCountry(const char* fileName, const std::string& countryName) {
 
   std::ifstream fin(fileName);
 
-  // Неможливо відкрити файл для запису
+  // Неможливо відкрити файл для читання
   if (!fin) {
     std::cout << "ERROR: Could not be opened for reading '" << fileName << "'\n";
     std::cout << '\n';
