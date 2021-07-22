@@ -64,7 +64,7 @@ void printStudent(const Student& student) {
 }
 
 int main() {
-  const uint8_t nStudents = 10;
+  const uint8_t nStudents = 3;
   Student student[nStudents];
 
   for (auto i = 0; i < nStudents; ++i) {
@@ -73,8 +73,13 @@ int main() {
   }
   
   for (auto i = 0; i < nStudents; ++i) {
+    std::cout << "--------------------------------\n";
+
     // Вивести дані студента
     printStudent(student[i]);
   }
+
+  std::cout << "--------------------------------\n";
+  std::cout << '\n';
   return 0;
 }
