@@ -55,7 +55,7 @@ void printStudentData(const Student& student) {
             << "Name2: " << student.name2 << '\n'
             << "Name3: " << student.name3 << '\n'
             << "Group: " << student.group << '\n'
-            << "Email: " << student.group << '\n'
+            << "Email: " << student.email << '\n'
             << "Phone: " << student.phone << '\n'
             << "Date of birth: " << student.dateOfBirth << '\n'
             << "Missed days: " << student.missedDays << '\n'
