@@ -20,7 +20,7 @@ uint16_t getValue() {
   return value;
 }
 
-void getStudentData(Student& student) {
+void getStudent(Student& student) {
   std::cout << "> Name1 = ";
   std::cin >> student.name1;
 
@@ -50,7 +50,7 @@ void getStudentData(Student& student) {
   std::cout << '\n';
 }
 
-void printStudentData(const Student& student) {
+void printStudent(const Student& student) {
   std::cout << "Name1: " << student.name1 << '\n'
             << "Name2: " << student.name2 << '\n'
             << "Name3: " << student.name3 << '\n'
@@ -69,12 +69,12 @@ int main() {
 
   for (auto i = 0; i < nStudents; ++i) {
     // Отримати дані студента
-    getStudentData(student[i]);
+    getStudent(student[i]);
   }
   
   for (auto i = 0; i < nStudents; ++i) {
     // Вивести дані студента
-    printStudentData(student[i]);
+    printStudent(student[i]);
   }
   return 0;
 }
