@@ -48,6 +48,6 @@ void searchCountry(const char* fileName) {
 
 int main() {
   // Пошук країни
-  searchCountry("country_list.txt");
+  searchCountry("countrys_database.txt");
   return 0;
 }
