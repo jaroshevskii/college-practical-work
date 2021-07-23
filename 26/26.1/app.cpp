@@ -7,7 +7,7 @@ struct Employee {
   
   uint16_t nYearsWorked;  // Кількість відпрацьованих років
 
-  double a;  // Сума проданого товару
+  double a;  // Отриманий прибуток
   double b;  // Комісійна винагорода
 };
 
@@ -45,7 +45,9 @@ double setB(const uint16_t& nYearsWorked, const uint16_t& a) {
   if (nYearsWorked > 10) {
     ++pesent;
   }
-  return a - (a - a / 100.0 * pesent);
+  
+  const double salary = 100.0;  // Посадовий оклад
+  return a - (a - a / salary * pesent);
 }
 
 void printEmployee(const Employee& employee) {
