@@ -28,6 +28,7 @@ void printGreeting(const char* fileName) {
 }
 
 int main() {
+  // Вивести привітання
   printGreeting("greeting.txt");
   return 0;
 }   
