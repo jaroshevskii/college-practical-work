@@ -14,6 +14,7 @@ uint16_t getValue() {
   return value;
 }
 
+// Отримати дані людини
 void getPeople(People& people) {
   std::cout << "> Name1 = ";
   std::cin >> people.name1;
@@ -29,6 +30,7 @@ void getPeople(People& people) {
   std::cout << '\n';
 }
 
+// Вивести повідомлення
 void printNotification(const uint16_t& age) {
   std::cout << "Notification: ";
   if (age < 18 || age > 59) {
@@ -44,6 +46,7 @@ void printNotification(const uint16_t& age) {
   std::cout << '\n';
 }
 
+// Вивести дані людини
 void printPeople(const People& people) {
   std::cout << "Name1: " << people.name1 << '\n'
             << "Name2: " << people.name2 << '\n'
