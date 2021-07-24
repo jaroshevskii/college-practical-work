@@ -15,12 +15,7 @@ void printCountry(const Country& country) {
   std::cout << '\n';
 }
 
-void searchCountry(const char* fileName) {
-  std::cout << "> Country name = ";
-  std::string searchName;
-  std::cin >> searchName;
-  std::cout << '\n';
-
+void searchCountry(const char* fileName, std::string& countryName) {
   std::ifstream fin(fileName);
 
   // Не можливо відкрити файл для читання
@@ -34,7 +29,7 @@ void searchCountry(const char* fileName) {
   
   Country country{};
   while (fin >> country.name >> country.capital >> country.nPeople) {
-    if (country.name == searchName) {
+    if (country.name == countryName) {
       printCountry(country);
       isSearch = true;
     }
@@ -47,7 +42,12 @@ void searchCountry(const char* fileName) {
 }
 
 int main() {
-  // Пошук країни
-  searchCountry("countrys_database.txt");
+  std::cout << "> Country name = ";
+  std::string countryName;
+  std::cin >> countryName;
+  std::cout << '\n';
+
+  // Знайти країну
+  searchCountry("countrys_database.txt", countryName);
   return 0;
 }
