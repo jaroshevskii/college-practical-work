@@ -4,14 +4,14 @@ struct Student {
   std::string name1;  // Призвіще
   std::string name2;  // Ім'я
   std::string name3;  // По ботькові
-  std::string group;  // Група
-  std::string email;  // Електронна пошта
 
+  std::string group;     // Група
+  std::string email;     // Електронна пошта
   uint16_t phone;        // Номер телефону
   uint16_t dateOfBirth;  // Дата народження
-  uint16_t missedDays;   // Кількість пропущених днів
 
-  double averageMark;  // Середній бал
+  uint16_t nMissedDays;  // Кількість пропущених днів
+  double averageMark;    // Середній бал
 };
 
 uint16_t getValue() {
@@ -20,6 +20,7 @@ uint16_t getValue() {
   return value;
 }
 
+// Отримати дані студента
 void getStudent(Student& student) {
   std::cout << "> Name1 = ";
   std::cin >> student.name1;
@@ -43,13 +44,14 @@ void getStudent(Student& student) {
   student.dateOfBirth = getValue();
   
   std::cout << "> Missed days = ";
-  student.missedDays = getValue();
+  student.nMissedDays = getValue();
   
   std::cout << "> Average mark = ";
   std::cin >> student.averageMark;
   std::cout << '\n';
 }
 
+// Вивести дані студента
 void printStudent(const Student& student) {
   std::cout << "Name1: " << student.name1 << '\n'
             << "Name2: " << student.name2 << '\n'
@@ -58,7 +60,7 @@ void printStudent(const Student& student) {
             << "Email: " << student.email << '\n'
             << "Phone: " << student.phone << '\n'
             << "Date of birth: " << student.dateOfBirth << '\n'
-            << "Missed days: " << student.missedDays << '\n'
+            << "Missed days: " << student.nMissedDays << '\n'
             << "Average mark: " << student.averageMark << '\n';
   std::cout << '\n';
 }
