@@ -17,6 +17,7 @@ uint16_t getValue() {
   return value;
 }
 
+// Отримати дані студента
 void getStudent(Student& student) {
   std::cout << "> Name1 = ";
   std::cin >> student.name1;
@@ -35,10 +36,12 @@ void getStudent(Student& student) {
   std::cout << '\n';
 }
 
+// Задати середній бал
 double setAverageMark(const uint16_t& english, const uint16_t& match) {
   return (english + match) / 2.0;
 }
 
+// Вивести дані студента
 void printStudent(const Student& student) {
   std::cout << "Name1: " << student.name1 << '\n'
             << "Name2: " << student.name2 << '\n'
@@ -47,6 +50,7 @@ void printStudent(const Student& student) {
   std::cout << '\n';
 }
 
+// Вивести повідомлення
 void printNonification(const uint16_t& averageMark) {
   std::cout << "Notification: ";
   if (averageMark > 99) {
@@ -74,7 +78,8 @@ int main() {
     
     // Вивести дані студента
     printStudent(student[i]);
-
+    
+    // Вивести повідомлення
     printNonification(student[i].averageMark);
   }
 
