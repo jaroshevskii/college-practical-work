@@ -22,6 +22,7 @@ uint16_t getValue() {
   return value;
 }
 
+// Отримати дані працівника
 void getEmployee(Employee& employee) {
   std::cout << "> Name1 = ";
   std::cin >> employee.name1;
@@ -48,6 +49,7 @@ void getEmployee(Employee& employee) {
   std::cout << '\n';
 }
 
+// Вивести дані працівника
 void printEmployee(const Employee& employee) {
   std::cout << "Name1: " << employee.name1 << '\n'
             << "Name2: " << employee.name2 << '\n'
@@ -71,14 +73,14 @@ double setSumSpentDays(const uint16_t& nSpentDays) {
   // Заробітня плата за відроблені дні
   double sumSpentDays = salary / nWorkDays * nSpentDays;
 
-  // Знаходження заробітньої плати з урахуванням премії
+  // Заробітня плата з урахуванням премії
   if (nSpentDays == nWorkDays) {
     sumSpentDays += sumSpentDays * 25.0 / 100.0;
   } else {
     sumSpentDays += sumSpentDays * 10.0 / 100.0;
   }
 
-  // Знаходження заробітньої плати з урахуванням податків
+  // Заробітня плата з урахуванням податків
   sumSpentDays -= sumSpentDays * 19.5 / 100.0;
   return sumSpentDays;
 }
@@ -90,21 +92,22 @@ double setSumSpentHours(const uint16_t& nSpentHours) {
   // Заробітня плата за відпрацьовані години
   double sumSpentHours = nSpentHours * payPerHour;
 
-  // Знаходження заробітньої плати з урахуванням податків
+  // Заробітня плата з урахуванням податків
   sumSpentHours -= sumSpentHours * 19.5 / 100.0;
   return sumSpentHours;
 }
 
 // Задати заробітню плату за відсотом
-double setSumPesent(const uint16_t profitReceived) {
-  const double percent = 25.0;  // Відсоткок
+double setSumPesent(const uint16_t& profitReceived) {
+  const double pecent = 25.0;  // Відсоткок
+  const double salary = 100.0;  // Посадовий оклад
 
   // Заробітня плата за відсотком
-  double sumPersent = profitReceived * percent / 100.0;
+  double sumPesent = profitReceived * pecent / salary;
 
-  // Знаходження заробітньої плати з урахуванням податків
-  sumPersent -= sumPersent * 19.5 / 100.0;
-  return sumPersent;
+  // Заробітня плата з урахуванням податків
+  sumPesent -= sumPesent * 19.5 / salary;
+  return sumPesent;
 }
 
 int main() {
@@ -112,6 +115,7 @@ int main() {
   Employee employee[nEmployee];
 
   for (auto i = 0; i < nEmployee; ++i) {
+    // Отримати дані працівника
     getEmployee(employee[i]);
     
     if (employee[i].idWork == 0) {
@@ -129,6 +133,7 @@ int main() {
   for (auto i = 0; i < nEmployee; ++i) {
     std::cout << "--------------------------------\n";
     
+    // Вивести дані працівника
     printEmployee(employee[i]);
   }
 
