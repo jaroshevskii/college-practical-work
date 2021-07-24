@@ -31,6 +31,7 @@ void printValues(const char* fileName) {
   }
 }
 
+// Задати максимальне значення
 uint16_t setMaxValue(const char* fileName) {
   std::ifstream fin(fileName);
   
@@ -68,9 +69,10 @@ void printValue(const char* fileName, int16_t& value) {
 int main() {
   printValues("values.txt");
   
-  // Встановити максимальне значення
+  // Задати максимальне значення
   int16_t maxValue = setMaxValue("values.txt");
-
+  
+  // Вивести значення
   printValue("max_value.txt", maxValue);
   return 0;
 }
