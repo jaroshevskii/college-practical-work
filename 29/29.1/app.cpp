@@ -22,8 +22,8 @@ void printPeople(const People& people) {
 
 void searchPeople(const char* fileName) {
   std::cout << "> Name1 = ";
-  std::string searchName1;
-  std::cin >> searchName1;
+  std::string peopleName1;
+  std::cin >> peopleName1;
   std::cout << '\n';
 
   std::ifstream fin(fileName);
@@ -39,8 +39,10 @@ void searchPeople(const char* fileName) {
 
   People people{};
   while (fin >> people.name1 >> people.name2 >> people.name3) {
-    if (people.name1 == searchName1) {
+    if (people.name1 == peopleName1) {
+      // Вивести дані людини
       printPeople(people);
+      
       isSearch = true;
     }
   }
@@ -118,9 +120,9 @@ int main() {
     std::cout << '\n';
 
     if (choise == 1) {
-      searchPeople("data.txt");
+      searchPeople("peoples_database.txt");
     } else if (choise == 2) {
-      addPeople("data.txt");
+      addPeople("peoples_database.txt");
     } else if (choise == 3) {
       return 0;
     }
