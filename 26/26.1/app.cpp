@@ -6,9 +6,9 @@ struct Employee {
   std::string name3;  // По батькові
   
   uint16_t nYearsWorked;  // Кількість відпрацьованих років
-
-  double a;  // Отриманий прибуток
-  double b;  // Комісійна винагорода
+  
+  double profitReceived;  // Отриманий прибуток
+  double sumPesent;       // Заробітня плата за відсотком
 };
 
 uint16_t getValue() {
@@ -17,6 +17,7 @@ uint16_t getValue() {
   return value;
 }
 
+// Отримати дані працівника
 void getEmployee(Employee& employee) {
   std::cout << "> Name1 = ";
   std::cin >> employee.name1;
@@ -30,15 +31,16 @@ void getEmployee(Employee& employee) {
   std::cout << "> Years worked = ";
   employee.nYearsWorked = getValue();
 
-  std::cout << "> A = ";
-  std::cin >> employee.a;
+  std::cout << "> Profit received = ";
+    std::cin >> employee.profitReceived;
   std::cout << '\n';
 }
 
-double setB(const uint16_t& nYearsWorked, const uint16_t& a) {
-  uint8_t pesent = 10;
+// Задати заробітню плату за відсотом
+double setSumPesent(const uint16_t& nYearsWorked, const uint16_t& profitReceived) {
+  uint8_t pesent = 10;  // Відсоток
 
-  if (a >= 5000.0) {
+  if (profitReceived >= 5000.0) {
     pesent += 5;
   }
 
@@ -47,14 +49,15 @@ double setB(const uint16_t& nYearsWorked, const uint16_t& a) {
   }
   
   const double salary = 100.0;  // Посадовий оклад
-  return a - (a - a / salary * pesent);
+  return profitReceived * pesent / salary;
 }
 
+// Вивести дані працівника
 void printEmployee(const Employee& employee) {
   std::cout << "Name1: " << employee.name1 << '\n'
             << "Name2: " << employee.name2 << '\n'
             << "Name3: " << employee.name3 << '\n'
-            << "B: " << employee.b << '\n';
+            << "Sum pesent: " << employee.sumPesent << '\n';
   std::cout << '\n';
 }
 
@@ -63,15 +66,17 @@ int main() {
   Employee employee[nEmployee];
 
   for (auto i = 0; i < nEmployee; ++i) {
+    // Отримати дані працівника
     getEmployee(employee[i]);
 
     // Задати комісійну винагороду
-    employee[i].b = setB(employee[i].nYearsWorked, employee[i].a);
+    employee[i].sumPesent = setSumPesent(employee[i].nYearsWorked, employee[i].profitReceived);
   }
 
   for (auto i = 0; i < nEmployee; ++i) {
     std::cout << "--------------------------------\n";
     
+    // Вивести дані працівника
     printEmployee(employee[i]);
   }
 
