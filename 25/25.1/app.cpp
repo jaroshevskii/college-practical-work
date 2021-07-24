@@ -6,8 +6,7 @@ struct Employee {
   std::string name3;  // По батькові
 
   uint16_t nSpentDays;  // Кількість відпрацьованих днів
-  
-  double sumSalary;  // Заробітня плата за позадовим окладом
+  double sumSpentDays;  // Заробітня плата за позадовим окладом
 };
 
 uint16_t getValue() {
@@ -16,6 +15,7 @@ uint16_t getValue() {
   return value;
 }
 
+// Отримати дані працівника
 void getEmployee(Employee& employee) {
   std::cout << "> Name1 = ";
   std::cin >> employee.name1;
@@ -31,18 +31,20 @@ void getEmployee(Employee& employee) {
   std::cout << '\n';
 }
 
-double setSumSalary(const uint16_t& nSpentDays) {
-  const uint8_t nWorkDays = 21;  // Кількість робочих днів
-  const double salary = 100.0;   // Посадовий оклад
-  return salary / nWorkDays * nSpentDays;
-}
-
+// Вивести дані працівника
 void printEmployee(const Employee& employee) {
   std::cout << "Name1: " << employee.name1 << '\n'
             << "Name2: " << employee.name2 << '\n'
             << "Name3: " << employee.name3 << '\n'
-            << "Sum salary: " << employee.sumSalary << '\n';
+            << "Sum spent days: " << employee.sumSpentDays << '\n';
   std::cout << '\n';
+}
+
+// Задати заробіню плату за відпрацьовані дні
+double setSumSpentDays(const uint16_t& nSpentDays) {
+  const uint8_t nWorkDays = 21;  // Кількість робочих днів
+  const double salary = 100.0;   // Посадовий оклад
+  return salary / nWorkDays * nSpentDays;
 }
 
 int main() {
@@ -50,15 +52,17 @@ int main() {
   Employee employee[nEmployee];
 
   for (auto i = 0; i < nEmployee; ++i) {
+    // Отримати дані працівника
     getEmployee(employee[i]);
     
     // Задати заробітню плату за посадовим окладом
-    employee[i].sumSalary = setSumSalary(employee[i].nSpentDays);
+    employee[i].sumSpentDays = setSumSpentDays(employee[i].nSpentDays);
   }
   
   for (auto i = 0; i < nEmployee; ++i) {
     std::cout << "--------------------------------\n";
     
+    // Вивести дані працівника
     printEmployee(employee[i]);
   }
 
