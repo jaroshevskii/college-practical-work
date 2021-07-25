@@ -1,4 +1,4 @@
-#include <iostream>
+  #include <iostream>
 
 struct People {
   std::string name1;  // Призвіще
