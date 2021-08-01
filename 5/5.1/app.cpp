@@ -9,7 +9,7 @@ double setResult(const int16_t &a, const int16_t &b, const int16_t &c,
   } else if (c != 0) {
     return pow(x, 2) / pow(c, 2);
   }
-  
+
   std::cout << "ERROR: Division by zero.\n";
   std::cout << '\n';
   return 0.0;
@@ -39,12 +39,13 @@ int main() {
 
   std::cout << "// Enter a fractional number x.\n";
   std::cout << '\n';
-  
+
   std::cout << "> x = ";
   double x;
   std::cin >> x;
-  std::cout <<  '\n';
+  std::cout << '\n';
 
+  // Задати результат обчислення
   double result = setResult(a, b, c, x);
 
   printResult(result);
