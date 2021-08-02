@@ -60,13 +60,8 @@ void printLessonsSchedule(uint16_t &dayOfWeek) {
     std::cout << '\n';
     return;
   case 6:
-    std::cout << "// Saturday\n"
-                 "- Weekend -\n";
-    std::cout << '\n';
-    return;
   case 7:
-    std::cout << "// Sunday\n"
-                 "- Weekend -\n";
+    std::cout << "- Weekend -\n";
     std::cout << '\n';
     return;
   }
