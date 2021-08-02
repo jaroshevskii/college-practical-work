@@ -17,14 +17,11 @@ double setResult(const int16_t &a, const int16_t &b, const int16_t &c,
 
 void printResult(const double &result) {
   std::cout << "Result: " << result << '\n';
-  std::cout << '\n';
 }
 
 int main() {
-  std::cout << "// Enter the real numbers a, d and c.\n";
-  std::cout << '\n';
-
-  std::cout << "> a = ";
+  std::cout << "// Enter the real numbers a, d and c.\n"
+               "> a = ";
   int16_t a;
   std::cin >> a;
 
@@ -37,10 +34,8 @@ int main() {
   std::cin >> c;
   std::cout << '\n';
 
-  std::cout << "// Enter a fractional number x.\n";
-  std::cout << '\n';
-
-  std::cout << "> x = ";
+  std::cout << "// Enter a fractional number x.\n"
+               "> x = ";
   double x;
   std::cin >> x;
   std::cout << '\n';
@@ -49,5 +44,6 @@ int main() {
   double result = setResult(a, b, c, x);
 
   printResult(result);
+  std::cout << '\n';
   return 0;
 }
