@@ -4,14 +4,13 @@ uint16_t getFunctionNumber() {
   uint16_t functionNumber;
   while (true) {
     std::cin >> functionNumber;
-
     if (functionNumber >= 1 && functionNumber <= 3) {
       return functionNumber;
-    } else {
-      std::cout << '\n';
-      std::cout << "ERROR: The function number is incorrect.\n";
-      std::cout << '\n';
     }
+    std::cout << '\n';
+    
+    std::cout << "ERROR: The function number is incorrect.\n";
+    std::cout << '\n';
 
     std::cout << "> ";
   }
