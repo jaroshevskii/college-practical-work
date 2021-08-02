@@ -31,7 +31,6 @@ double setResult(const uint16_t &functionNumber, const double &x) {
 
 void printResult(const double &result) {
   std::cout << "Result: " << result << '\n';
-  std::cout << '\n';
 }
 
 int main() {
@@ -50,5 +49,6 @@ int main() {
   double result = setResult(functionNumber, x);
   
   printResult(result);
+  std::cout << '\n';
   return 0;
 }
