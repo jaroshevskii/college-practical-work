@@ -6,7 +6,7 @@ int main() {
               << "First name: Sania\n"
                  "Last name: Jaroshevskii\n";
   }
-  std::cout << std::strin(32, '-') << '\n';
+  std::cout << std::string(32, '-') << '\n';
   std::cout << '\n';
   return 0;
 }
