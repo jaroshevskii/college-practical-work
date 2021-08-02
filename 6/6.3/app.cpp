@@ -4,14 +4,13 @@ uint16_t getMonthNumber() {
   uint16_t monthNumber;
   while (true) {
     std::cin >> monthNumber;
-
     if (monthNumber >= 1 && monthNumber <= 12) {
       return monthNumber;
-    } else {
-      std::cout << '\n';
-      std::cout << "ERROR: The month number is incorrect.\n";
-      std::cout << '\n';
     }
+    std::cout << '\n';
+
+    std::cout << "ERROR: The month number is incorrect.\n";
+    std::cout << '\n';
 
     std::cout << "> ";
   }
