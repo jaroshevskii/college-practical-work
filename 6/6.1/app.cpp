@@ -1,6 +1,6 @@
 #include <iostream>
 
-uint16_t getDayOfWeek () {
+uint16_t getDayOfWeek() {
   uint16_t dayOfWeek;
   while (true) {
     std::cin >> dayOfWeek;
