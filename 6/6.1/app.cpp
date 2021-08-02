@@ -9,7 +9,7 @@ uint16_t getDayOfWeek() {
       return dayOfWeek;
     } else {
       std::cout << '\n';
-      std::cout << "ERROR: Week number is not true.\n";
+      std::cout << "ERROR: The day of the week is incorrect.\n";
       std::cout << '\n';
     }
 
