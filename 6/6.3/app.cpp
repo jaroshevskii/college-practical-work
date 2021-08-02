@@ -18,6 +18,7 @@ uint16_t getMonthNumber() {
 }
 
 void printMonth(const uint16_t &monthNumber) {
+  std::cout << "Month: ";
   switch (monthNumber) {
   case 1:
     std::cout << "January\n";
