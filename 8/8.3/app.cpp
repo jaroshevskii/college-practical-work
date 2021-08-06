@@ -26,7 +26,7 @@ int main() {
   std::cout << '\n';
   
   std::cout << "// Enter the symbol.\n"
-               "> row = ";
+               "> symbol = ";
   char symbol;
   std::cin >> symbol;
   std::cout << '\n';
