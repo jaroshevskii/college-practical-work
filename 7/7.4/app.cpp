@@ -53,7 +53,7 @@ int main() {
   uint16_t n = getValue(1);
   std::cout << '\n';
 
-  // Задати результат обчислення
+  // Задати результат обчислення.
   double result = setResult(a, n);
 
   printResult(result);
