@@ -10,7 +10,7 @@ void printCos(int16_t begin, const int16_t &end, const int16_t &step) {
 
 void printSin(int16_t begin, const int16_t &end, const int16_t &step) {
   do {
-    std::cout << "sin(" << begin << ") = " << cos(begin) << '\n';
+    std::cout << "sin(" << begin << ") = " << sin(begin) << '\n';
 
     begin += step;
   } while (begin <= end);
