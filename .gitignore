@@ -1,6 +1,11 @@
 # Test folder
 test/*
 
+# Files built by Visual Studio
+*.ilk
+*.obj
+*.pdb
+
 # VS Code files for those working on multiple tools
 .vscode/*
 !.vscode/settings.json
@@ -9,4 +14,4 @@ test/*
 !.vscode/extensions.json
 
 # Executables
-app
+*.exe
