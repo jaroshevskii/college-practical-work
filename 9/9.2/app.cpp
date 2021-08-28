@@ -19,11 +19,10 @@ void printSin(int16_t begin, const int16_t &end, const int16_t &step) {
 int main() {
   std::cout << std::string(32, '-') << '\n';
   printCos(0, 300, 5);
-  std::cout << std::string(32, '-') << '\n';
-  std::cout << '\n';
 
   std::cout << std::string(32, '-') << '\n';
   printSin(0, 300, 5);
+  
   std::cout << std::string(32, '-') << '\n';
   std::cout << '\n';
   return 0;
