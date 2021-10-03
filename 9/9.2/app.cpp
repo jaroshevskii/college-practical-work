@@ -22,7 +22,7 @@ int main() {
 
   std::cout << std::string(32, '-') << '\n';
   printSin(0, 300, 5);
-  
+
   std::cout << std::string(32, '-') << '\n';
   std::cout << '\n';
   return 0;
