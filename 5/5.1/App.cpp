@@ -11,7 +11,6 @@ double setResult(const int &a, const int &b, const int &c,
     return x - a / pow(x - c, 2);
   if (c != 0)
     return pow(x, 2) / pow(c, 2);
-  }
 
   std::cout << "ERROR: Division by zero.\n";
   std::cout << '\n';
