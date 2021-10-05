@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include <Get.h>
+#include "Get.h"
 
 /// Задати результат
 double setResult(const int &a, const int &b, const int &c,
