@@ -1,12 +1,15 @@
 #include <iostream>
 
-double setResult(const int16_t &a, const int16_t &b, const int16_t &c,
+#include <Get.h>
+
+/// Задати результат
+double setResult(const int &a, const int &b, const int &c,
                  const double &x) {
-  if (x < 1.0 && c != 0) {
+  if (x < 1.0 && c != 0)
     return a * pow(x, 2) + b / c;
-  } else if (x > 1.5 && c == 0) {
+  if (x > 1.5 && c == 0)
     return x - a / pow(x - c, 2);
-  } else if (c != 0) {
+  if (c != 0)
     return pow(x, 2) / pow(c, 2);
   }
 
@@ -15,35 +18,31 @@ double setResult(const int16_t &a, const int16_t &b, const int16_t &c,
   return 0.0;
 }
 
+/// Вивести результат
 void printResult(const double &result) {
   std::cout << "Result: " << result << '\n';
+  std::cout << '\n';
 }
 
 int main() {
-  std::cout << "// Enter the real numbers a, d and c.\n"
+  std::cout << "// Enter the integers: a, b, and c.\n"
                "> a = ";
-  int16_t a;
-  std::cin >> a;
+  int a = getInt();
 
   std::cout << "> b = ";
-  int16_t b;
-  std::cin >> b;
+  int b = getInt();
 
   std::cout << "> c = ";
-  int16_t c;
-  std::cin >> c;
+  int c = getInt();
   std::cout << '\n';
 
-  std::cout << "// Enter a fractional number x.\n"
+  std::cout << "// Enter the decimal number.\n"
                "> x = ";
-  double x;
-  std::cin >> x;
+  double x = getDouble();
   std::cout << '\n';
 
-  // Задати результат обчислення
   double result = setResult(a, b, c, x);
 
   printResult(result);
-  std::cout << '\n';
   return 0;
 }
