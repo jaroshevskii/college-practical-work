@@ -2,7 +2,7 @@
 
 #include "Get.h"
 
-/// Задати результат
+/// Задати результат.
 double setResult(const int &a, const int &b, const int &c,
                  const double &x) {
   if (x < 1.0 && c != 0)
@@ -17,7 +17,7 @@ double setResult(const int &a, const int &b, const int &c,
   return 0.0;
 }
 
-/// Вивести результат
+/// Вивести результат.
 void printResult(const double &result) {
   std::cout << "Result: " << result << '\n';
   std::cout << '\n';
@@ -40,7 +40,7 @@ int main() {
   double x = getDouble();
   std::cout << '\n';
 
-  double result = setResult(a, b, c, x);
+  const double result = setResult(a, b, c, x);
 
   printResult(result);
   return 0;
