@@ -19,7 +19,7 @@ void getDayOfWeek(int &dayOfWeek) {
 }
 
 /// Вивести розклад занять.
-void printTimetable.(const int &dayOfWeek) {
+void printTimetable(const int &dayOfWeek) {
   switch (dayOfWeek) {
   case 1:
     std::cout << "// Monday\n"
