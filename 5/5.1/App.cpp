@@ -26,18 +26,22 @@ void printResult(const double &result) {
 int main() {
   std::cout << "// Enter the integers: a, b, and c.\n"
                "> a = ";
-  int a = getInt();
+  int a;
+  getInt(a);
 
   std::cout << "> b = ";
-  int b = getInt();
+  int b;
+  getInt(b);
 
   std::cout << "> c = ";
-  int c = getInt();
+  int c;
+  getInt(c);
   std::cout << '\n';
 
-  std::cout << "// Enter the decimal number.\n"
+  std::cout << "// Enter the decimal number: x.\n"
                "> x = ";
-  double x = getDouble();
+  double x;
+  getDouble(x);
   std::cout << '\n';
 
   const double result = setResult(a, b, c, x);
