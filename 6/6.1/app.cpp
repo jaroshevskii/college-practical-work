@@ -1,22 +1,25 @@
 #include <iostream>
 
-uint16_t getDayOfWeek() {
-  uint16_t dayOfWeek;
-  while (true) {
-    std::cin >> dayOfWeek;
-    if (dayOfWeek >= 1 && dayOfWeek <= 7) {
-      return dayOfWeek;
-    }
-    std::cout << '\n';
+#include "Get.h"
 
-    std::cout << "ERROR: The day of the week is incorrect.\n";
+/// Отримати день тижня.
+void getDayOfWeek(int &dayOfWeek) {
+  while (true) {
+    getInt(dayOfWeek);
+
+    if (dayOfWeek >= 1 && dayOfWeek <= 5)
+      return;
+
+    std::cout << '\n';
+    std::cout << "ERROR: The day of the week is not true.\n";
     std::cout << '\n';
 
     std::cout << "> ";
   }
 }
 
-void printLessonsSchedule(uint16_t &dayOfWeek) {
+/// Вивести розклад занять.
+void printTimetable.(const int &dayOfWeek) {
   switch (dayOfWeek) {
   case 1:
     std::cout << "// Monday\n"
@@ -24,6 +27,7 @@ void printLessonsSchedule(uint16_t &dayOfWeek) {
                  "2. Algebra\n"
                  "3. Physics\n"
                  "4. History of Ukraine\n";
+    std::cout << '\n';
     return;
   case 2:
     std::cout << "// Tuesday\n"
@@ -31,6 +35,7 @@ void printLessonsSchedule(uint16_t &dayOfWeek) {
                  "2. Biology\n"
                  "3. History of Ukraine\n"
                  "4. Geography\n";
+    std::cout << '\n';
     return;
   case 3:
     std::cout << "// Wednesday\n"
@@ -38,6 +43,7 @@ void printLessonsSchedule(uint16_t &dayOfWeek) {
                  "2. Geometry\n"
                  "3. Chemistry\n"
                  "4. Biology\n";
+    std::cout << '\n';
     return;
   case 4:
     std::cout << "// Thursday\n"
@@ -45,6 +51,7 @@ void printLessonsSchedule(uint16_t &dayOfWeek) {
                  "2. Physics\n"
                  "3. English\n"
                  "4. World History\n";
+    std::cout << '\n';
     return;
   case 5:
     std::cout << "// Friday\n"
@@ -52,22 +59,18 @@ void printLessonsSchedule(uint16_t &dayOfWeek) {
                  "2. Physics\n"
                  "3. Chemistry\n"
                  "4. Algebra\n";
-    return;
-  case 6:
-  case 7:
-    std::cout << "- Weekend -\n";
+    std::cout << '\n';
     return;
   }
 }
 
 int main() {
-  std::cout << "// Enter the day of week.\n"
+  std::cout << "// Enter the day of the week.\n"
                "> ";
-  uint16_t dayOfWeek = getDayOfWeek();
+  int dayOfWeek;
+  getDayOfWeek(dayOfWeek);
   std::cout << '\n';
 
-  // Вивести розклад занять
-  printLessonsSchedule(dayOfWeek);
-  std::cout << '\n';
+  printTimetable(dayOfWeek);
   return 0;
 }
