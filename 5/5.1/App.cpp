@@ -12,7 +12,7 @@ double setResult(const int &a, const int &b, const int &c,
   if (c != 0)
     return pow(x, 2) / pow(c, 2);
 
-  std::cout << "ERROR: Division by zero.\n";
+  std::cout << "error: Division by zero.\n";
   std::cout << '\n';
   return 0.0;
 }
