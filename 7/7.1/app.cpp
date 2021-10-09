@@ -1,23 +1,24 @@
 #include <iostream>
 
-struct People {
+struct Person {
   std::string firstNeme;
   std::string lastName;
 };
 
-void printPeople(const People &people, const int &nTimes) {
+/// Надрукувати особу.
+void printPerson(const Person &person, const int &nTimes) {
   for (int i = 0; i <= nTimes; ++i) {
     std::cout << std::string(32, '-') << "\n"
-              << "First name: " << people.firstNeme << "\n"
-              << "Last name: " << people.lastName << "\n";
+              << "First name: " << person.firstNeme << "\n"
+              << "Last name: " << person.lastName << "\n";
   }
   std::cout << std::string(32, '-') << "\n";
   std::cout << '\n';
 }
 
 int main() {
-  People people{"Sania", "Jaroshevski"};
+  Person person{"Sania", "Jaroshevski"};
 
-  printPeople(people, 10);
+  printPerson(person, 10);
   return 0;
 }
