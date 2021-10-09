@@ -11,7 +11,7 @@ void getDayOfWeek(int &dayOfWeek) {
       return;
 
     std::cout << '\n';
-    std::cout << "ERROR: The day of the week is not true.\n";
+    std::cout << "error: The day of the week is not true.\n";
     std::cout << '\n';
     
     std::cout << "// Repeat again.\n"
