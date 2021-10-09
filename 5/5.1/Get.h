@@ -15,4 +15,4 @@ double getDouble(double &number) {
   return number;
 }
 
-#endif
+#endif // GET_H

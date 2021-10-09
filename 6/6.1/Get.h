@@ -9,4 +9,4 @@ int getInt(int &number) {
   return number;
 }
 
-#endif
+#endif // GET_H
