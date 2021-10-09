@@ -13,7 +13,7 @@ void getDayOfWeek(int &dayOfWeek) {
     std::cout << '\n';
     std::cout << "error: The day of the week is not true.\n";
     std::cout << '\n';
-    
+
     std::cout << "// Repeat again.\n"
                  "> ";
   }
