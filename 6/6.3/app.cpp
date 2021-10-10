@@ -1,70 +1,70 @@
 #include <iostream>
 
-uint16_t getMonthNumber() {
-  uint16_t monthNumber;
-  while (true) {
-    std::cin >> monthNumber;
-    if (monthNumber >= 1 && monthNumber <= 12) {
-      return monthNumber;
-    }
-    std::cout << '\n';
+#include "Get.h"
 
-    std::cout << "ERROR: The month number is incorrect.\n";
+/// Отримати номер місяця.
+void getMonthNumber(int &monthNumber) {
+  while (true) {
+    getInt(monthNumber);
+
+    if (monthNumber >= 1 && monthNumber <= 12)
+      return;
+
+    std::cout << '\n';
+    std::cout << "error: The month number is incorrect.\n";
     std::cout << '\n';
 
     std::cout << "> ";
   }
 }
 
-void printMonth(const uint16_t &monthNumber) {
-  std::cout << "Month: ";
+/// Встановити місяць.
+std::string setMonth(const int &monthNumber) {
   switch (monthNumber) {
   case 1:
-    std::cout << "January\n";
-    return;
+    return "January";
   case 2:
-    std::cout << "February\n";
-    return;
+    return "February";
   case 3:
-    std::cout << "March\n";
-    return;
+    return "March";
   case 4:
-    std::cout << "April\n";
-    return;
+    return "April";
   case 5:
-    std::cout << "May\n";
-    return;
+    return "May";
   case 6:
-    std::cout << "June\n";
-    return;
+    return "June";
   case 7:
-    std::cout << "July\n";
-    return;
+    return "July";
   case 8:
-    std::cout << "August\n";
-    return;
+    return "August";
   case 9:
-    std::cout << "September\n";
-    return;
+    return "September";
   case 10:
-    std::cout << "October\n";
-    return;
+    return "October";
   case 11:
-    std::cout << "November\n";
-    return;
+    return "November";
   case 12:
-    std::cout << "December\n";
-    return;
+    return "December";
+  default:
+    return "Unknown";
   }
+}
+
+/// Надрукувати місяць.
+void printMonth(const std::string &month) {
+  std::cout << "Month: " << month << "\n";
+  std::cout << '\n';
 }
 
 int main() {
   std::cout << "// Enter the month number.\n"
                "> ";
-  uint16_t monthNumber = getMonthNumber();
+  int monthNumber;
+  getMonthNumber(monthNumber);
   std::cout << '\n';
-  
-  printMonth(monthNumber);
-  std::cout << '\n';
+
+  std::string month = setMonth(monthNumber);
+
+  printMonth(month);
   return 0;
 }
