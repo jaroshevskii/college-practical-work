@@ -4,8 +4,8 @@
 #include <iostream>
 
 /// Отримати ціле число.
-void getInt(int &number) {
-  std::cin >> number;
+void getInt(int &value) {
+  std::cin >> value;
 }
 
 #endif // GET_H
