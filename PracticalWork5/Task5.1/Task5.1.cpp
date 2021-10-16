@@ -1,7 +1,5 @@
 #include <iostream>
 
-#include "Get.h"
-
 /// Встановити результат.
 double setResult(const int &a, const int &b, const int &c,
                  const double &x) {
@@ -27,21 +25,21 @@ int main() {
   std::cout << "// Enter the integers: a, b, and c.\n"
                "> a = ";
   int a;
-  getInt(a);
+  std::cin >> a;
 
   std::cout << "> b = ";
   int b;
-  getInt(b);
+  std::cin >> b;
 
   std::cout << "> c = ";
   int c;
-  getInt(c);
+  std::cin >> c;
   std::cout << '\n';
 
   std::cout << "// Enter the decimal number: x.\n"
                "> x = ";
   double x;
-  getDouble(x);
+  std::cin >> x;
   std::cout << '\n';
 
   const double result = setResult(a, b, c, x);
