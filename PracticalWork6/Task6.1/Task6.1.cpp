@@ -1,11 +1,9 @@
 #include <iostream>
 
-#include "Get.h"
-
 /// Отримати день тижня.
 void getDayOfWeek(int &dayOfWeek) {
   while (true) {
-    getInt(dayOfWeek);
+    std::cin >> dayOfWeek;
 
     if (dayOfWeek >= 1 && dayOfWeek <= 5)
       return;
