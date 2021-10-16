@@ -1,11 +1,9 @@
 #include <iostream>
 
-#include "Get.h"
-
 /// Отримати номер функції.
 void getFunctionNumber(int &functionNumber) {
   while (true) {
-    getInt(functionNumber);
+    std::cin >> functionNumber;
 
     if (functionNumber >= 1 && functionNumber <= 3)
       return;
@@ -35,7 +33,7 @@ double setResult(const int &functionNumber, const double &x) {
 
 /// Надрукувати результат.
 void printResult(const double &result) {
-  std::cout << "Result: " << result << "\n";
+  std::cout << "Result: " << result << '\n';
   std::cout << '\n';
 }
 
@@ -54,7 +52,7 @@ int main() {
   std::cout << "// Enter the decimal number: x.\n"
                "> x = ";
   double x;
-  getDouble(x);
+  std::cin >> x;
   std::cout << '\n';
   
   const double result = setResult(functionNumber, x);
