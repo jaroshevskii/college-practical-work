@@ -1,11 +1,9 @@
 #include <iostream>
 
-#include "Get.h"
-
 /// Отримати номер місяця.
 void getMonthNumber(int &monthNumber) {
   while (true) {
-    getInt(monthNumber);
+    std::cin >> monthNumber;
 
     if (monthNumber >= 1 && monthNumber <= 12)
       return;
@@ -53,7 +51,7 @@ std::string setMonth(const int &monthNumber) {
 
 /// Надрукувати місяць.
 void printMonth(const std::string &month) {
-  std::cout << "Month: " << month << "\n";
+  std::cout << "Month: " << month << '\n';
   std::cout << '\n';
 }
 
