@@ -7,6 +7,7 @@ int main() {
                 << "Number: " << number << '\n';
     }
   }
+  
   std::cout << std::string(32, '-') << '\n';
   std::cout << '\n';
   return 0;
