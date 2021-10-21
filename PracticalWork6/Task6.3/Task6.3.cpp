@@ -1,14 +1,18 @@
 #include <iostream>
 
 /// Отримати номер місяця.
-void getMonthNumber(int &monthNumber) {
+int getMonthNumber() {
+  std::cout << "// Enter the month number.\n"
+               "> ";
+  int monthNumber;
+
   while (true) {
     std::cin >> monthNumber;
+    std::cout << '\n';
 
     if (monthNumber >= 1 && monthNumber <= 12)
-      return;
+      return monthNumber;
 
-    std::cout << '\n';
     std::cout << "error: The month number is incorrect.\n";
     std::cout << '\n';
 
@@ -56,13 +60,9 @@ void printMonth(const std::string &month) {
 }
 
 int main() {
-  std::cout << "// Enter the month number.\n"
-               "> ";
-  int monthNumber;
-  getMonthNumber(monthNumber);
-  std::cout << '\n';
+  const int monthNumber = getMonthNumber();
 
-  std::string month = setMonth(monthNumber);
+  const std::string month = setMonth(monthNumber);
 
   printMonth(month);
   return 0;
