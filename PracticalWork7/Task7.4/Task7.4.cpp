@@ -1,14 +1,16 @@
 #include <iostream>
 
-/// Отримати число.
-void getNumber(int &number) {
+/// Отримати ціле число.
+int getInt(const int &minValue) {
+  int value;
+
   while (true) {
-    std::cin >> number;
-
-    if (number > 0)
-      return;
-
+    std::cin >> value;
     std::cout << '\n';
+
+    if (value >= minValue)
+      return value;
+
     std::cout << "error: The number is incorrect.\n";
     std::cout << '\n';
 
@@ -44,19 +46,17 @@ void printResult(const double &result) {
 }
 
 int main() {
-  std::cout << "// Enter the decimal number: a.\n"
-               "> a = ";
+  std::cout << "// Enter the decimal number.\n"
+               "> ";
   double a;
   std::cin >> a;
   std::cout << '\n';
 
-  std::cout << "// Enter the integer: n.\n"
-               "> n = ";
-  int n;
-  getNumber(n);
-  std::cout << '\n';
+  std::cout << "// Enter the integer.\n"
+               "> ";
+  int n = getInt(1);
 
-  double result = setResult(a, n);
+  const double result = setResult(a, n);
 
   printResult(result);
   return 0;
