@@ -1,14 +1,18 @@
 #include <iostream>
 
 /// Отримати день тижня.
-void getDayOfWeek(int &dayOfWeek) {
+int getDayOfWeek() {
+  std::cout << "// Enter the day of the week.\n"
+               "> ";
+  int dayOfWeek;
+
   while (true) {
     std::cin >> dayOfWeek;
+    std::cout << '\n';
 
     if (dayOfWeek >= 1 && dayOfWeek <= 5)
-      return;
+      return dayOfWeek;
 
-    std::cout << '\n';
     std::cout << "error: The day of the week is not true.\n";
     std::cout << '\n';
 
@@ -21,7 +25,7 @@ void getDayOfWeek(int &dayOfWeek) {
 void printTimetable(const int &dayOfWeek) {
   switch (dayOfWeek) {
   case 1:
-    std::cout << "// Monday\n"
+    std::cout << "// Monday:\n"
                  "  1. Ukrainian language\n"
                  "  2. Algebra\n"
                  "  3. Physics\n"
@@ -29,7 +33,7 @@ void printTimetable(const int &dayOfWeek) {
     std::cout << '\n';
     return;
   case 2:
-    std::cout << "// Tuesday\n"
+    std::cout << "// Tuesday:\n"
                  "  1. Ukrainian literature\n"
                  "  2. Biology\n"
                  "  3. History of Ukraine\n"
@@ -37,7 +41,7 @@ void printTimetable(const int &dayOfWeek) {
     std::cout << '\n';
     return;
   case 3:
-    std::cout << "// Wednesday\n"
+    std::cout << "// Wednesday:\n"
                  "  1. English\n"
                  "  2. Geometry\n"
                  "  3. Chemistry\n"
@@ -45,7 +49,7 @@ void printTimetable(const int &dayOfWeek) {
     std::cout << '\n';
     return;
   case 4:
-    std::cout << "// Thursday\n"
+    std::cout << "// Thursday:\n"
                  "  1. Ukrainian literature\n"
                  "  2. Physics\n"
                  "  3. English\n"
@@ -53,7 +57,7 @@ void printTimetable(const int &dayOfWeek) {
     std::cout << '\n';
     return;
   case 5:
-    std::cout << "// Friday\n"
+    std::cout << "// Friday:\n"
                  "  1. Ukrainian language\n"
                  "  2. Physics\n"
                  "  3. Chemistry\n"
@@ -64,11 +68,7 @@ void printTimetable(const int &dayOfWeek) {
 }
 
 int main() {
-  std::cout << "// Enter the day of the week.\n"
-               "> ";
-  int dayOfWeek;
-  getDayOfWeek(dayOfWeek);
-  std::cout << '\n';
+  const int dayOfWeek = getDayOfWeek();
 
   printTimetable(dayOfWeek);
   return 0;
