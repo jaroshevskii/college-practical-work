@@ -1,8 +1,9 @@
 #include <iostream>
 
+/// Особа.
 struct Person {
-  std::string firstName; // Ім'я.
-  std::string lastName;  // Призвіще.
+  std::string firstName; // Ім'я
+  std::string lastName;  // Призвіще
 };
 
 /// Надрукувати особу.
@@ -17,8 +18,10 @@ void printPerson(const Person &person, const int &nTimes) {
 }
 
 int main() {
-  Person person{"Sania", "Jaroshevskii"};
+  const Person person{"Sania", "Jaroshevskii"};
 
-  printPerson(person, 10);
+  const int nTimes = 10;
+
+  printPerson(person, nTimes);
   return 0;
 }
