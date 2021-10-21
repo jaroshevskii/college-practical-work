@@ -1,14 +1,23 @@
 #include <iostream>
 
 /// Отримати номер функції.
-void getFunctionNumber(int &functionNumber) {
+int getFunctionNumber() {
+  std::cout << "// Enter the function number:\n"
+               "  1. -2.0 * pow(x, 2.0) - 4.0\n"
+               "  2. 5.0 * x + 2.0\n"
+               "  3. 15.0 - 3.0 * x\n";
+  std::cout << '\n';
+
+  std::cout << "> ";
+  int functionNumber;
+
   while (true) {
     std::cin >> functionNumber;
+    std::cout << '\n';
 
     if (functionNumber >= 1 && functionNumber <= 3)
-      return;
+      return functionNumber;
     
-    std::cout << '\n';
     std::cout << "error: The function number is incorrect.\n";
     std::cout << '\n';
 
@@ -38,16 +47,7 @@ void printResult(const double &result) {
 }
 
 int main() {
-  std::cout << "// Enter the function number.\n"
-               "  1. -2 * pow(x, 2) - 4\n"
-               "  2. 5 * x + 2\n"
-               "  3. 15 - 3 * x\n";
-  std::cout << '\n';
-
-  std::cout << "> ";
-  int functionNumber;
-  getFunctionNumber(functionNumber);
-  std::cout << '\n';
+  const int functionNumber = getFunctionNumber();
 
   std::cout << "// Enter the decimal number: x.\n"
                "> x = ";
