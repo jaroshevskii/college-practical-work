@@ -13,7 +13,7 @@ void getNumber(int &number) {
     std::cout << '\n';
 
     std::cout << "// Repeat again.\n"
-              << "> ";
+                 "> ";
     std::cout << '\n';
   }
 }
