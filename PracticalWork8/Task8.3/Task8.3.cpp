@@ -1,19 +1,21 @@
 #include <iostream>
 
-/// Отримати число.
-void getNumber(int &number) {
+/// Отримати ціле число.
+int getInt(const int &minValue) {
+  int value;
+ 
   while (true) {
-    std::cin >> number;
-
-    if (number > 0)
-      return;
-
+    std::cin >> value;
     std::cout << '\n';
-    std::cout << "error: The number is incorrect.\n";
+
+    if (value >= minValue)
+      return value;
+
+    std::cout << "error: The value is incorrect.\n";
     std::cout << '\n';
 
     std::cout << "// Repeat again.\n"
-                 "> ";
+              << "> ";
     std::cout << '\n';
   }
 }
@@ -27,15 +29,11 @@ int main() {
 
   std::cout << "// Enter the number of row.\n"
                "> ";
-  int nRow;
-  getNumber(nRow);
-  std::cout << '\n';
+  int nRow = getInt(1);
 
   std::cout << "// Enter the number of column.\n"
                "> ";
-  int nColumn;
-  getNumber(nColumn);
-  std::cout << '\n';
+  int nColumn = getInt(1);
 
   for (int i = 1; i <= nRow; ++i) {
     for (int j = 1; j <= nColumn; ++j) {
