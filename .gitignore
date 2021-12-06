@@ -1,5 +1,5 @@
-# Test folder
-Test/*
+# Temp folder
+Temp/*
 
 # Files built by Visual Studio
 *.ilk
